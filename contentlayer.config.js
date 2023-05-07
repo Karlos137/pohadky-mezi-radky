@@ -16,6 +16,11 @@ export const FairyTale = defineDocumentType(() => ({
   filePathPattern: `**/*.mdx`,
   contentType: "mdx",
   fields: {
+    id: {
+      type: "number",
+      description: "ID of the fairy tale",
+      required: true,
+    },
     title: {
       type: "string",
       description: "The title of the fairy tale",
@@ -47,6 +52,10 @@ export const FairyTale = defineDocumentType(() => ({
     url: {
       type: "string",
       resolve: fairyTale => `/${fairyTale._raw.flattenedPath}`,
+    },
+    slug: {
+      type: "string",
+      resolve: fairyTale => `${fairyTale._raw.flattenedPath}`,
     },
   },
 }))
