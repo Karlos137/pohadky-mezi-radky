@@ -1,3 +1,7 @@
+// React components
+import FairyTaleCards from "@/components/FairyTaleCards"
+
+// Contentlayer
 import { allFairyTales } from "contentlayer/generated"
 
 const Home = () => {
@@ -16,6 +20,7 @@ const Home = () => {
       {allFairyTales.map((fairyTale, i) => {
         return <div key={i}>title: {fairyTale.title}</div>
       })}
+      <FairyTaleCards />
     </>
   )
 }

@@ -1,6 +1,11 @@
+// Next.js
+import { notFound } from "next/navigation"
+
+// Contentlayer
 import { allFairyTales } from "contentlayer/generated"
 import { getMDXComponent } from "next-contentlayer/hooks"
-import { notFound } from "next/navigation"
+
+// React components
 import Image from "../../../components/Image"
 
 export async function generateStaticParams() {
@@ -15,9 +20,6 @@ export default async function Page({ params }: { params: { slug: string } }) {
   )
 
   if (!fairyTale) notFound()
-
-  console.log("FAIRY TALE URL", fairyTale.slug)
-  console.log("FAIRY TALE FLATTENEDPATH", fairyTale._raw.flattenedPath)
 
   const MDXContent = getMDXComponent(fairyTale.body.code)
 

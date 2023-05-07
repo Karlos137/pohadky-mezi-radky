@@ -105,6 +105,10 @@
 
   /* CUSTOM START */
 
+  ::selection {
+    @apply bg-lavender-500 text-indigo-50;
+  }
+
   html {
     @apply scroll-smooth;
   }
@@ -115,6 +119,10 @@
 
   h1 {
     @apply text-2xl font-extrabold uppercase lg:text-4xl;
+  }
+
+  h2 {
+    @apply text-xl font-medium lg:text-2xl;
   }
 
   /* CUSTOM END */

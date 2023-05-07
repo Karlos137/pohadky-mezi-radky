@@ -3,6 +3,10 @@ type FairyTalesLayoutProps = {
 }
 
 const FairyTalesLayout = ({ children }: FairyTalesLayoutProps) => {
-  return <article className="prose lg:prose-xl">{children}</article>
+  return (
+    <article className="prose prose-invert mx-auto lg:prose-xl">
+      {children}
+    </article>
+  )
 }
 export default FairyTalesLayout

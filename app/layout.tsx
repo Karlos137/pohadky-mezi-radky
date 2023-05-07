@@ -6,6 +6,7 @@ import { Nunito } from "next/font/google"
 
 // React components
 import Header from "@/components/Header"
+import Footer from "@/components/Footer/"
 
 const nunito = Nunito({ subsets: ["latin", "latin-ext"], display: "swap" })
 
@@ -21,9 +22,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="cs">
-      <body className={`${nunito.className} app h-full`}>
+      <body className={`${nunito.className} app flex h-full flex-col`}>
         <Header />
-        <main> {children}</main>
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   )

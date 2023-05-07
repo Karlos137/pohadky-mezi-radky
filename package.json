@@ -15,6 +15,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@heroicons/react": "^2.0.17",
     "contentlayer": "^0.3.2",
     "next": "13.4.1",
     "next-contentlayer": "^0.3.2",
