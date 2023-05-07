@@ -1,5 +1,5 @@
 // Constants
-import { TAGS } from "./TagsBar.constants"
+import { TAGS } from "../../utils/constants"
 
 // Tailwind Merge
 import { twMerge } from "tailwind-merge"

@@ -4,6 +4,9 @@ import FairyTaleCards from "@/components/FairyTaleCards"
 // Contentlayer
 import { allFairyTales } from "contentlayer/generated"
 
+// Constants
+import { TAGS } from "@/utils/constants"
+
 const Home = () => {
   return (
     <>
@@ -17,10 +20,25 @@ const Home = () => {
           vychutnejte si kouzlo pohádek!
         </p>
       </div>
-      {allFairyTales.map((fairyTale, i) => {
-        return <div key={i}>title: {fairyTale.title}</div>
-      })}
-      <FairyTaleCards />
+
+      <FairyTaleCards
+        cards={allFairyTales.map((fairyTale, i) => {
+          const { id, title, url, timeToRead, excerpt, tags, image } = fairyTale
+          return {
+            id,
+            title,
+            url,
+            timeToRead,
+            excerpt,
+            image,
+            tags: tags
+              .map(tag => {
+                return TAGS.find(t => t.slug === tag.slug)?.label || ""
+              })
+              .filter(tag => tag.length > 0),
+          }
+        })}
+      />
     </>
   )
 }
