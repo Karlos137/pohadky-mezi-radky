@@ -15,7 +15,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="cs">
-      <body className={`${nunito.className} app h-full`}>{children}</body>
+      <body className={`${nunito.className} app h-full`}>
+        {children}
+        <div>TEST</div>
+      </body>
     </html>
   )
 }
