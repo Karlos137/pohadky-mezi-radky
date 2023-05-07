@@ -57,7 +57,7 @@ const SearchPage = () => {
       {filteredFairyTales.length > 0 ? (
         <FairyTaleCards
           cards={filteredFairyTales.map((fairyTale, i) => {
-            const { id, title, url, timeToRead, excerpt, tags, image } =
+            const { id, title, url, timeToRead, excerpt, tags, image, color } =
               fairyTale
             return {
               id,
@@ -66,6 +66,7 @@ const SearchPage = () => {
               timeToRead,
               excerpt,
               image,
+              color,
               tags: tags
                 .map(tag => {
                   return TAGS.find(t => t.slug === tag.slug)?.label || ""

@@ -38,7 +38,7 @@ export default async function TagPage({
             })
           })
           .map((fairyTale, i) => {
-            const { id, title, url, timeToRead, excerpt, tags, image } =
+            const { id, title, url, timeToRead, excerpt, tags, image, color } =
               fairyTale
             return {
               id,
@@ -47,6 +47,7 @@ export default async function TagPage({
               timeToRead,
               excerpt,
               image,
+              color,
               tags: tags
                 .map(tag => {
                   return TAGS.find(t => t.slug === tag.slug)?.label || ""
