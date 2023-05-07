@@ -14,7 +14,11 @@ export async function generateStaticParams() {
   }))
 }
 
-export default async function Page({ params }: { params: { slug: string } }) {
+export default async function FairyTalePage({
+  params,
+}: {
+  params: { slug: string }
+}) {
   const fairyTale = allFairyTales.find(
     fairyTale => fairyTale.slug === params.slug
   )

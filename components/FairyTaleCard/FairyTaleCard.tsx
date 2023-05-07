@@ -2,6 +2,9 @@
 import Image from "next/image"
 import Link from "next/link"
 
+// Tailwind Merge
+import { twMerge } from "tailwind-merge"
+
 // Heroicons
 import { BookOpenIcon, TagIcon } from "@heroicons/react/24/outline"
 
@@ -12,6 +15,7 @@ type FairyTaleCardProps = {
   excerpt: string
   tags: string[]
   image: string
+  color: string
 }
 
 const FairyTaleCard = ({
@@ -21,7 +25,18 @@ const FairyTaleCard = ({
   excerpt,
   tags,
   image,
+  color,
 }: FairyTaleCardProps) => {
+  const getColor = () => {
+    switch (color) {
+      case "red-700":
+        return "bg-red-700"
+      case "green-700":
+        return "bg-green-700"
+      default:
+        return "bg-slate-700"
+    }
+  }
   return (
     <Link
       href={url}
@@ -35,7 +50,12 @@ const FairyTaleCard = ({
           className="delay-50 rounded-t-[30px] object-cover transition duration-300 ease-in-out group-hover:scale-110"
         />
       </div>
-      <div className="flex grow flex-col rounded-b-[30px] bg-green-700 px-5 py-4">
+      <div
+        className={twMerge(
+          "flex grow flex-col rounded-b-[30px] bg-green-700 px-5 py-4",
+          getColor()
+        )}
+      >
         <h2 className="mb-2">{title}</h2>
         <div className="mb-2 flex items-center gap-1.5">
           <BookOpenIcon className="h-4 w-4" />

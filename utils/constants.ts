@@ -9,4 +9,9 @@ export const TAGS = [
     label: "Příroda",
     slug: "priroda",
   },
+  {
+    id: "3",
+    label: "Hudba",
+    slug: "hudba",
+  },
 ]

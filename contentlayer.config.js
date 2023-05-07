@@ -26,6 +26,11 @@ export const FairyTale = defineDocumentType(() => ({
       description: "The title of the fairy tale",
       required: true,
     },
+    color: {
+      type: "string",
+      description: "The color of the fairy tale",
+      required: true,
+    },
     timeToRead: {
       type: "string",
       description: "Time to read the fairy tale",
