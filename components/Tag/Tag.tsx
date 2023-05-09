@@ -11,7 +11,6 @@ const Tag = ({ label, href }: TagProps) => {
     <Link
       href={href}
       title={label}
-      shallow={true}
       className="rounded-lg bg-midnight-950 px-4 py-2 transition-colors hover:bg-lavender-500"
     >
       {label}

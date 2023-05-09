@@ -46,7 +46,10 @@ const FairyTaleCard = ({
         <Image
           src={image}
           fill={true}
-          alt="Test"
+          alt={title}
+          quality={85}
+          placeholder="blur"
+          sizes="100vw, (max-width: 768px) 50vw, (min-width: 1280px) 33vw"
           className="delay-50 rounded-t-[30px] object-cover transition duration-300 ease-in-out group-hover:scale-110"
         />
       </div>
