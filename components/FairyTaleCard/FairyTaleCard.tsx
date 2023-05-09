@@ -49,6 +49,7 @@ const FairyTaleCard = ({
           alt={title}
           quality={85}
           placeholder="blur"
+          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg=="
           sizes="100vw, (max-width: 768px) 50vw, (min-width: 1280px) 33vw"
           className="delay-50 rounded-t-[30px] object-cover transition duration-300 ease-in-out group-hover:scale-110"
         />
