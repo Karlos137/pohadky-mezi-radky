@@ -27,7 +27,7 @@ export default async function TagPage({
 
   return (
     <>
-      <div className="mx-auto mb-16 max-w-[760px] text-center">
+      <div className="mx-auto mb-16 max-w-[760px] px-6 text-center lg:px-12">
         <h1 className="mt-8">{tag.label}</h1>
       </div>
       <FairyTaleCards

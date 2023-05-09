@@ -10,7 +10,7 @@ import { TAGS } from "@/utils/constants"
 const HomePage = () => {
   return (
     <>
-      <div className="mx-auto mb-16 max-w-[760px] text-center">
+      <div className="mx-auto mb-16 max-w-[760px] px-6 text-center lg:px-12">
         <h1 className="mb-4 mt-8">Všechny pohádky</h1>
         <p>
           Vítejte na webové stránce plné pohádek pro děti! Přinášíme Vám

@@ -27,7 +27,7 @@ const FairyTaleHeader = ({ title, timeToRead, tags }: FairyTaleHeaderProps) => {
           <div className="text-sm">
             {tags.map((tag, i) => {
               return (
-                <>
+                <span key={tag.slug}>
                   <Link
                     href={`/tag/${tag.slug}`}
                     className="no-underline hover:underline"
@@ -36,7 +36,7 @@ const FairyTaleHeader = ({ title, timeToRead, tags }: FairyTaleHeaderProps) => {
                   </Link>
 
                   {tags.length !== i + 1 && `, `}
-                </>
+                </span>
               )
             })}
           </div>

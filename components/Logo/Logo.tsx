@@ -5,7 +5,10 @@ const Logo = () => {
   return (
     <Link href="/" className="block uppercase">
       <span className="text-[18px] font-extrabold">POHÁDKY</span>{" "}
-      <span className="text-[14px] font-medium">MEZI ŘÁDKY</span>
+      <br className="md:hidden" />
+      <span className="text-[14px] font-medium tracking-[0.05rem] md:tracking-normal">
+        MEZI ŘÁDKY
+      </span>
     </Link>
   )
 }

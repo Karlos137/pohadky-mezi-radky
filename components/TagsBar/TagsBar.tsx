@@ -13,7 +13,7 @@ const TagsBar = () => {
       {TAGS.map((tag, i) => {
         const { label, slug } = tag
         return (
-          <li key={tag.id} className={twMerge("", i === 0 && "pl-5")}>
+          <li key={slug} className={twMerge("", i === 0 && "pl-5")}>
             <Tag label={label} href={`/tag/${slug}`} />
           </li>
         )
