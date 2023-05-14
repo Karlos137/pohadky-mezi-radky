@@ -36,11 +36,6 @@ export const FairyTale = defineDocumentType(() => ({
       description: "Time to read the fairy tale",
       required: true,
     },
-    image: {
-      type: "string",
-      description: "Image of the fairy tale",
-      required: true,
-    },
     tags: {
       type: "list",
       of: Tag,

@@ -23,15 +23,13 @@ const HomePage = () => {
 
       <FairyTaleCards
         cards={allFairyTales.map((fairyTale, i) => {
-          const { id, title, url, timeToRead, excerpt, tags, image, color } =
-            fairyTale
+          const { id, title, url, timeToRead, excerpt, tags, color } = fairyTale
           return {
             id,
             title,
             url,
             timeToRead,
             excerpt,
-            image,
             color,
             tags: tags
               .map(tag => {

@@ -38,7 +38,7 @@ export default async function TagPage({
             })
           })
           .map((fairyTale, i) => {
-            const { id, title, url, timeToRead, excerpt, tags, image, color } =
+            const { id, title, url, timeToRead, excerpt, tags, color } =
               fairyTale
             return {
               id,
@@ -46,7 +46,6 @@ export default async function TagPage({
               url,
               timeToRead,
               excerpt,
-              image,
               color,
               tags: tags
                 .map(tag => {

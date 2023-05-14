@@ -5,6 +5,9 @@ import Link from "next/link"
 // Tailwind Merge
 import { twMerge } from "tailwind-merge"
 
+// Helpers
+import { getCardImage } from "@/utils/helpers"
+
 // Heroicons
 import { BookOpenIcon, TagIcon } from "@heroicons/react/24/outline"
 
@@ -14,7 +17,6 @@ type FairyTaleCardProps = {
   timeToRead: string
   excerpt: string
   tags: string[]
-  image: string
   color: string
 }
 
@@ -24,7 +26,6 @@ const FairyTaleCard = ({
   timeToRead,
   excerpt,
   tags,
-  image,
   color,
 }: FairyTaleCardProps) => {
   const getColor = () => {
@@ -44,12 +45,11 @@ const FairyTaleCard = ({
     >
       <div className="relative aspect-[380/250] overflow-hidden rounded-t-[30px]">
         <Image
-          src={image}
+          src={getCardImage(title)}
           fill={true}
           alt={title}
           quality={85}
           placeholder="blur"
-          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg=="
           sizes="100vw, (max-width: 768px) 50vw, (min-width: 1280px) 33vw"
           className="delay-50 rounded-t-[30px] object-cover transition duration-300 ease-in-out group-hover:scale-110"
         />
