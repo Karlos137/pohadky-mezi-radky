@@ -8,6 +8,7 @@ const Image = (props: ImageProps) => {
       <NextImage
         {...props}
         fill={true}
+        placeholder="blur"
         className="!m-0 rounded-2xl object-cover object-center"
       />
     </div>
