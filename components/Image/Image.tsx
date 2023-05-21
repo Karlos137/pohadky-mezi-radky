@@ -4,7 +4,7 @@ interface ImageProps extends NextImageProps {}
 
 const Image = (props: ImageProps) => {
   return (
-    <div className="relative aspect-video w-full rounded-2xl">
+    <div className="relative aspect-[4/3] w-full rounded-2xl">
       <NextImage
         {...props}
         fill={true}
