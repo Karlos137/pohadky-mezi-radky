@@ -1,15 +1,20 @@
-import NextImage, { ImageProps as NextImageProps } from "next/image"
+import NextImage, { ImageProps as NextImageProps } from "next/legacy/image"
 
-interface ImageProps extends NextImageProps {}
+interface ImageProps extends NextImageProps {
+  src: string
+}
 
 const Image = (props: ImageProps) => {
   return (
-    <div className="relative aspect-[4/3] w-full rounded-2xl">
+    <div className="relative aspect-[16/10] w-full rounded-[30px]">
       <NextImage
         {...props}
-        fill={true}
+        src={props.src}
+        layout="fill"
+        objectFit="cover"
         placeholder="blur"
-        className="!m-0 rounded-2xl object-cover object-center"
+        blurDataURL={`/_next/image?url=${props.src}&w=16&q=1`}
+        className="!m-0 rounded-[30px] object-cover object-center"
       />
     </div>
   )
