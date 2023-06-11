@@ -6,7 +6,7 @@ import Link from "next/link"
 import { twMerge } from "tailwind-merge"
 
 // Helpers
-import { getCardImage } from "@/utils/helpers"
+import { getCardImage, getColor } from "@/utils/helpers"
 
 // Heroicons
 import { BookOpenIcon, TagIcon } from "@heroicons/react/24/outline"
@@ -28,16 +28,6 @@ const FairyTaleCard = ({
   tags,
   color,
 }: FairyTaleCardProps) => {
-  const getColor = () => {
-    switch (color) {
-      case "red-700":
-        return "bg-red-700"
-      case "green-700":
-        return "bg-green-700"
-      default:
-        return "bg-slate-700"
-    }
-  }
   return (
     <Link
       href={url}
@@ -56,8 +46,8 @@ const FairyTaleCard = ({
       </div>
       <div
         className={twMerge(
-          "flex grow flex-col rounded-b-[30px] bg-green-700 px-5 py-4",
-          getColor()
+          "flex grow flex-col rounded-b-[30px] px-5 py-4",
+          getColor(color)
         )}
       >
         <h2 className="mb-2">{title}</h2>

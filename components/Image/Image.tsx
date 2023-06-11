@@ -1,3 +1,4 @@
+// Next.js
 import NextImage, { ImageProps as NextImageProps } from "next/legacy/image"
 
 interface ImageProps extends NextImageProps {

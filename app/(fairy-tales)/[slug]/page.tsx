@@ -35,6 +35,7 @@ export default async function FairyTalePage({
     <>
       <FairyTaleHeader
         title={fairyTale.title}
+        color={fairyTale.color}
         timeToRead={fairyTale.timeToRead}
         tags={fairyTale.tags
           .map(tag => {
@@ -45,11 +46,13 @@ export default async function FairyTalePage({
           })
           .filter(tag => tag.label && tag.slug)}
       />
-      <MDXContent
-        components={{
-          Image: Image,
-        }}
-      />
+      <div className="mx-auto max-w-[856px] px-6 lg:px-12">
+        <MDXContent
+          components={{
+            Image: Image,
+          }}
+        />
+      </div>
     </>
   )
 }

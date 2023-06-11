@@ -23,12 +23,12 @@ export const FairyTale = defineDocumentType(() => ({
     },
     title: {
       type: "string",
-      description: "The title of the fairy tale",
+      description: "Title of the fairy tale",
       required: true,
     },
     color: {
       type: "string",
-      description: "The color of the fairy tale",
+      description: "Color of the fairy tale",
       required: true,
     },
     timeToRead: {

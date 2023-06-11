@@ -1,11 +1,11 @@
-// Constants
-import { TAGS } from "../../utils/constants"
-
 // Tailwind Merge
 import { twMerge } from "tailwind-merge"
 
 // React components
 import Tag from "../Tag"
+
+// Constants
+import { TAGS } from "../../utils/constants"
 
 const TagsBar = () => {
   return (
