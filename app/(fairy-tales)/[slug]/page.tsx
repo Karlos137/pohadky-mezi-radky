@@ -6,7 +6,7 @@ import { allFairyTales } from "contentlayer/generated"
 import { getMDXComponent } from "next-contentlayer/hooks"
 
 // React components
-import Image from "../../../components/Image"
+import Image from "@/components/Image"
 import FairyTaleHeader from "@/components/FairyTaleHeader"
 
 // Constants

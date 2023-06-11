@@ -1,28 +1,45 @@
-// React components
-import FairyTaleCards from "@/components/FairyTaleCards"
+"use client"
+
+// React
+import { useState } from "react"
+
+// Next.js
+import Link from "next/link"
 
 // Contentlayer
 import { allFairyTales } from "contentlayer/generated"
 
+// React components
+import FairyTaleCards from "@/components/FairyTaleCards"
+import Button from "@/components/Button/Button"
+
 // Constants
-import { TAGS } from "@/utils/constants"
+import { TAGS, FAIRY_TALES_SHOWN } from "@/utils/constants"
+
+// Dictionary
+import dictionary from "@/utils/dictionary"
 
 const HomePage = () => {
+  const [fairyTalesShown, setFairyTalesShown] = useState(FAIRY_TALES_SHOWN)
+
+  const randomFairyTaleLink =
+    allFairyTales[Math.floor(Math.random() * allFairyTales.length)].url
+
   return (
     <>
       <div className="mx-auto mb-16 max-w-[760px] px-6 text-center lg:px-12">
-        <h1 className="mb-4 mt-8">Všechny pohádky</h1>
-        <p>
-          Vítejte na webové stránce plné pohádek pro děti! Přinášíme Vám
-          kouzelné příběhy, které budou vaše děti milovat. Naše kolekce zahrnuje
-          moderní pohádky pro novou generaci, s neobyčejnými hrdiny a kouzelnými
-          světy, které okouzlí i ty nejnáročnější čtenáře. Připojte se k nám a
-          vychutnejte si kouzlo pohádek!
-        </p>
+        <h1 className="mb-4 mt-8">{dictionary.pages.homepage.title}</h1>
+        <p>{dictionary.pages.homepage.description}</p>
+        <Link
+          href={randomFairyTaleLink}
+          className="mt-8 flex justify-center px-6 lg:px-12"
+        >
+          <Button>{dictionary.pages.homepage.randomFairyTaleButton}</Button>
+        </Link>
       </div>
 
       <FairyTaleCards
-        cards={allFairyTales.map((fairyTale, i) => {
+        cards={allFairyTales.slice(0, fairyTalesShown).map((fairyTale, i) => {
           const { id, title, url, timeToRead, excerpt, tags, color } = fairyTale
           return {
             id,
@@ -39,6 +56,19 @@ const HomePage = () => {
           }
         })}
       />
+
+      {fairyTalesShown < allFairyTales.length && (
+        <div className="mb-12 flex justify-center px-6 lg:px-12">
+          <Button
+            onClick={() => {
+              const nextFairyTalesShown = fairyTalesShown + 3
+              setFairyTalesShown(nextFairyTalesShown)
+            }}
+          >
+            {dictionary.showMoreButton}
+          </Button>
+        </div>
+      )}
     </>
   )
 }

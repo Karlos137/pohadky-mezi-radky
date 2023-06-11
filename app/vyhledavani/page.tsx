@@ -1,18 +1,26 @@
 "use client"
 
+// React
+import { useState } from "react"
+
 // Next.js
 import { useSearchParams } from "next/navigation"
-
-// Constants
-import { TAGS } from "@/utils/constants"
-
-// React components
-import FairyTaleCards from "@/components/FairyTaleCards/"
 
 // Contentlayer
 import { allFairyTales } from "@/.contentlayer/generated"
 
+// React components
+import FairyTaleCards from "@/components/FairyTaleCards/"
+
+// Constants
+import { TAGS, FAIRY_TALES_SHOWN } from "@/utils/constants"
+
+// Dictionary
+import dictionary from "@/utils/dictionary"
+
 const SearchPage = () => {
+  const [fairyTalesShown, setFairyTalesShown] = useState(FAIRY_TALES_SHOWN)
+
   const searchParams = useSearchParams()
 
   const search = searchParams.get("s")
@@ -39,11 +47,8 @@ const SearchPage = () => {
   if (!search) {
     return (
       <div className="mx-auto max-w-[760px] px-6 text-center xl:px-12">
-        <h1 className="mb-4 mt-8">Vyhledávání</h1>
-        <p>
-          Pro vyhledání pohádky napište do pole pro vyhledávání váš hledaný
-          výraz.
-        </p>
+        <h1 className="mb-4 mt-8">{dictionary.pages.search.title}</h1>
+        <p>{dictionary.pages.search.description}</p>
       </div>
     )
   }
@@ -51,7 +56,9 @@ const SearchPage = () => {
   return (
     <>
       <div className="mx-auto max-w-[780px] px-6 text-center xl:px-12">
-        <h1 className="mb-4 mt-8">Výsledky vyhledávání pro:</h1>
+        <h1 className="mb-4 mt-8">
+          {dictionary.pages.search.searchResultsTitle}
+        </h1>
         <h2 className="mb-8">{search}</h2>
       </div>
       {filteredFairyTales.length > 0 ? (
@@ -76,8 +83,21 @@ const SearchPage = () => {
         />
       ) : (
         <p className="mx-auto max-w-[760px] px-6 text-center lg:px-12">
-          Pro zadaný výraz nebyla nalezena žádná pohádka.
+          {dictionary.pages.search.noResults}
         </p>
+      )}
+
+      {fairyTalesShown < filteredFairyTales.length && (
+        <div className="mb-12 flex justify-center px-6 lg:px-12">
+          <button
+            onClick={() => {
+              const nextFairyTalesShown = fairyTalesShown + 3
+              setFairyTalesShown(nextFairyTalesShown)
+            }}
+          >
+            {dictionary.showMoreButton}
+          </button>
+        </div>
       )}
     </>
   )

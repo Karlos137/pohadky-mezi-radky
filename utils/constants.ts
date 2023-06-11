@@ -1,3 +1,5 @@
+export const FAIRY_TALES_SHOWN = 9
+
 export const TAGS = [
   {
     label: "Vesmír",

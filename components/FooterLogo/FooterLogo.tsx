@@ -3,7 +3,7 @@ import Link from "next/link"
 
 const FooterLogo = () => {
   return (
-    <Link href="/" className="block uppercase">
+    <Link href="/" className="block uppercase" title="POHÁDKY MEZI ŘÁDKY">
       <span className="text-[34px] font-extrabold leading-[46px]">POHÁDKY</span>
       <br />
       <span className="text-[24px] leading-[33px] tracking-[0.14em]">
