@@ -10,6 +10,7 @@ Keywords:
 - Next.js
 - TailwindCSS
 - Tailwind Merge
+- Contentlayer
 - Heroicons
 - Zustand
 - ESLint

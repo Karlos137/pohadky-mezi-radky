@@ -1,5 +1,12 @@
 export default {
   showMoreButton: "Další pohádky",
+  footer: {
+    copyright: {
+      title: "Všechna práva vyhrazena",
+      description:
+        "Rádi bychom vás upozornili, že všechny pohádky na této stránce jsou chráněny autorskými právy a jakékoliv kopírování, šíření či další použití bez našeho výslovného souhlasu je zakázáno. Naše pohádky jsou určeny pro zábavu a vzdělávání dětí a nemají za cíl urážet či poškozovat. Upozorňujeme, že se zříkáme jakékoliv odpovědnosti za případné následky čtení našich pohádek. Děkujeme za vaše pochopení.",
+    },
+  },
   pages: {
     homepage: {
       title: "Katalog pohádek",
