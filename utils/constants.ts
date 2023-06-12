@@ -10,7 +10,7 @@ export const TAGS = [
     slug: "priroda",
   },
   {
-    label: "Hudba",
-    slug: "hudba",
+    label: "Zvířátka",
+    slug: "zviratka",
   },
 ]

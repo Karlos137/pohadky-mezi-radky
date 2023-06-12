@@ -1,6 +1,9 @@
 // Next.js
 import Link from "next/link"
 
+// React components
+import Button from "@/components/Button/Button"
+
 // Dictionary
 import dictionary from "@/utils/dictionary"
 
@@ -10,7 +13,7 @@ const NotFound = () => {
       <h1 className="py-8">{dictionary.pages.notFound.title}</h1>
       <p className="mb-8 text-lg">{dictionary.pages.notFound.description}</p>
       <Link href="/" className="font-semibold uppercase hover:underline">
-        {dictionary.pages.notFound.homepageButton}
+        <Button>{dictionary.pages.notFound.homepageButton}</Button>
       </Link>
     </div>
   )

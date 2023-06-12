@@ -7,9 +7,6 @@ import { twMerge } from "tailwind-merge"
 // Heroicons
 import { BookOpenIcon, TagIcon } from "@heroicons/react/24/outline"
 
-// Helpers
-import { getColor } from "@/utils/helpers"
-
 type FairyTaleHeaderProps = {
   title: string
   color: string
@@ -23,6 +20,29 @@ const FairyTaleHeader = ({
   timeToRead,
   tags,
 }: FairyTaleHeaderProps) => {
+  const getColor = (color: string) => {
+    switch (color) {
+      case "red-700":
+        return "bg-red-700"
+      case "red-900":
+        return "bg-red-900"
+      case "green-700":
+        return "bg-green-700"
+      case "green-900":
+        return "bg-green-900"
+      case "purple-700":
+        return "bg-purple-700"
+      case "purple-900":
+        return "bg-purple-900"
+      case "teal-700":
+        return "bg-teal-700"
+      case "teal-900":
+        return "bg-teal-900"
+      default:
+        return "bg-slate-700"
+    }
+  }
+
   return (
     <div className="not-prose !mt-8 rounded-lg pb-4 pt-8 lg:pb-5">
       <div className="mx-auto max-w-[808px] px-6">
