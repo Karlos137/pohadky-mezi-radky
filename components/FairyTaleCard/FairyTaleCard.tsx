@@ -50,6 +50,10 @@ const FairyTaleCard = ({
         return "bg-pink-700"
       case "pink-900":
         return "bg-pink-900"
+      case "blue-700":
+        return "bg-blue-700"
+      case "blue-900":
+        return "bg-blue-900"
       default:
         return "bg-slate-700"
     }

@@ -1,12 +1,9 @@
-// Next.js
-import Link from "next/link"
-
 // Contentlayer
 import { allFairyTales } from "contentlayer/generated"
 
 // React components
 import FairyTaleCards from "@/components/FairyTaleCards"
-import Button from "@/components/Button/Button"
+import RandomFairyTaleButton from "@/components/RandomFairyTaleButton"
 
 // Constants
 import { TAGS } from "@/utils/constants"
@@ -15,20 +12,12 @@ import { TAGS } from "@/utils/constants"
 import dictionary from "@/utils/dictionary"
 
 const HomePage = () => {
-  const randomFairyTaleLink =
-    allFairyTales[Math.floor(Math.random() * allFairyTales.length)].url
-
   return (
     <>
       <div className="mx-auto mb-16 max-w-[760px] px-6 text-center lg:px-12">
         <h1 className="mb-4 mt-8">{dictionary.pages.homepage.title}</h1>
         <p>{dictionary.pages.homepage.description}</p>
-        <Link
-          href={randomFairyTaleLink}
-          className="mt-8 flex justify-center px-6 lg:px-12"
-        >
-          <Button>{dictionary.pages.homepage.randomFairyTaleButton}</Button>
-        </Link>
+        <RandomFairyTaleButton />
       </div>
 
       <FairyTaleCards
