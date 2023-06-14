@@ -1,9 +1,5 @@
-"use client"
-
-// React
-import { useState } from "react"
-
 // Next.js
+import { Metadata } from "next"
 import { notFound } from "next/navigation"
 
 // Contentlayer
@@ -13,10 +9,20 @@ import { allFairyTales } from "contentlayer/generated"
 import FairyTaleCards from "@/components/FairyTaleCards"
 
 // Constants
-import { TAGS, FAIRY_TALES_SHOWN } from "@/utils/constants"
+import { TAGS } from "@/utils/constants"
 
-// Dictionary
-import dictionary from "@/utils/dictionary"
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string }
+}): Promise<Metadata> {
+  const tag = TAGS.find(tag => tag.slug === params.slug)
+
+  return {
+    title: `${tag?.label} | Pohádky mezi řádky` || "Pohádky mezi řádky",
+    description: `Pohádky pro děti v kategorii ${tag?.label}.`,
+  }
+}
 
 export async function generateStaticParams() {
   return TAGS.map(tag => ({
@@ -29,8 +35,6 @@ export default async function TagPage({
 }: {
   params: { slug: string }
 }) {
-  const [fairyTalesShown, setFairyTalesShown] = useState(FAIRY_TALES_SHOWN)
-
   const tag = TAGS.find(tag => tag.slug === params.slug)
 
   if (!tag) notFound()
@@ -64,19 +68,6 @@ export default async function TagPage({
           }
         })}
       />
-
-      {fairyTalesShown < filteredFairyTales.length && (
-        <div className="mb-12 flex justify-center px-6 lg:px-12">
-          <button
-            onClick={() => {
-              const nextFairyTalesShown = fairyTalesShown + 3
-              setFairyTalesShown(nextFairyTalesShown)
-            }}
-          >
-            {dictionary.showMoreButton}
-          </button>
-        </div>
-      )}
     </>
   )
 }

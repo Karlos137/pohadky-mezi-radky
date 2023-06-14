@@ -1,8 +1,3 @@
-"use client"
-
-// React
-import { useState } from "react"
-
 // Next.js
 import { useSearchParams } from "next/navigation"
 
@@ -13,14 +8,17 @@ import { allFairyTales } from "@/.contentlayer/generated"
 import FairyTaleCards from "@/components/FairyTaleCards/"
 
 // Constants
-import { TAGS, FAIRY_TALES_SHOWN } from "@/utils/constants"
+import { TAGS } from "@/utils/constants"
 
 // Dictionary
 import dictionary from "@/utils/dictionary"
 
-const SearchPage = () => {
-  const [fairyTalesShown, setFairyTalesShown] = useState(FAIRY_TALES_SHOWN)
+export const metadata = {
+  title: "Vyhledávání | Pohádky mezi řádky",
+  description: "Pohádky pro děti.",
+}
 
+const SearchPage = () => {
   const searchParams = useSearchParams()
 
   const search = searchParams.get("s")
@@ -85,19 +83,6 @@ const SearchPage = () => {
         <p className="mx-auto max-w-[760px] px-6 text-center lg:px-12">
           {dictionary.pages.search.noResults}
         </p>
-      )}
-
-      {fairyTalesShown < filteredFairyTales.length && (
-        <div className="mb-12 flex justify-center px-6 lg:px-12">
-          <button
-            onClick={() => {
-              const nextFairyTalesShown = fairyTalesShown + 3
-              setFairyTalesShown(nextFairyTalesShown)
-            }}
-          >
-            {dictionary.showMoreButton}
-          </button>
-        </div>
       )}
     </>
   )

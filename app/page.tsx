@@ -1,8 +1,3 @@
-"use client"
-
-// React
-import { useState } from "react"
-
 // Next.js
 import Link from "next/link"
 
@@ -14,14 +9,12 @@ import FairyTaleCards from "@/components/FairyTaleCards"
 import Button from "@/components/Button/Button"
 
 // Constants
-import { TAGS, FAIRY_TALES_SHOWN } from "@/utils/constants"
+import { TAGS } from "@/utils/constants"
 
 // Dictionary
 import dictionary from "@/utils/dictionary"
 
 const HomePage = () => {
-  const [fairyTalesShown, setFairyTalesShown] = useState(FAIRY_TALES_SHOWN)
-
   const randomFairyTaleLink =
     allFairyTales[Math.floor(Math.random() * allFairyTales.length)].url
 
@@ -39,7 +32,7 @@ const HomePage = () => {
       </div>
 
       <FairyTaleCards
-        cards={allFairyTales.slice(0, fairyTalesShown).map((fairyTale, i) => {
+        cards={allFairyTales.map((fairyTale, i) => {
           const { id, title, url, timeToRead, excerpt, tags, color } = fairyTale
           return {
             id,
@@ -56,19 +49,6 @@ const HomePage = () => {
           }
         })}
       />
-
-      {fairyTalesShown < allFairyTales.length && (
-        <div className="mb-12 flex justify-center px-6 lg:px-12">
-          <Button
-            onClick={() => {
-              const nextFairyTalesShown = fairyTalesShown + 3
-              setFairyTalesShown(nextFairyTalesShown)
-            }}
-          >
-            {dictionary.showMoreButton}
-          </Button>
-        </div>
-      )}
     </>
   )
 }

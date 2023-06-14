@@ -7,6 +7,11 @@ import Button from "@/components/Button/Button"
 // Dictionary
 import dictionary from "@/utils/dictionary"
 
+export const metadata = {
+  title: "Stránka nenalezena | Pohádky mezi řádky",
+  description: "Pohádky pro děti.",
+}
+
 const NotFound = () => {
   return (
     <div className="mx-auto max-w-[760px] text-center">

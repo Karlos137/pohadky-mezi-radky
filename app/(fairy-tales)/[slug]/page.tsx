@@ -1,4 +1,5 @@
 // Next.js
+import { Metadata } from "next"
 import { notFound } from "next/navigation"
 
 // Contentlayer
@@ -11,6 +12,21 @@ import FairyTaleHeader from "@/components/FairyTaleHeader"
 
 // Constants
 import { TAGS } from "@/utils/constants"
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string }
+}): Promise<Metadata> {
+  const fairyTale = allFairyTales.find(
+    fairyTale => fairyTale.slug === params.slug
+  )
+
+  return {
+    title: `${fairyTale?.title} | Pohádky mezi řádky` || "Pohádky mezi řádky",
+    description: fairyTale?.excerpt || "Pohádky pro děti.",
+  }
+}
 
 export async function generateStaticParams() {
   return allFairyTales.map(fairyTale => ({
