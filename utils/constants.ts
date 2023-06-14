@@ -13,4 +13,12 @@ export const TAGS = [
     label: "Zvířátka",
     slug: "zviratka",
   },
+  {
+    label: "Přátelství",
+    slug: "pratelstvi",
+  },
+  {
+    label: "Magie",
+    slug: "magie",
+  },
 ]

@@ -46,6 +46,10 @@ const FairyTaleCard = ({
         return "bg-teal-700"
       case "teal-900":
         return "bg-teal-900"
+      case "pink-700":
+        return "bg-pink-700"
+      case "pink-900":
+        return "bg-pink-900"
       default:
         return "bg-slate-700"
     }
@@ -53,7 +57,7 @@ const FairyTaleCard = ({
   return (
     <Link
       href={url}
-      className="group flex min-h-[475px] flex-col rounded-[30px] shadow-lg"
+      className="group flex min-h-[525px] flex-col rounded-[30px] shadow-lg"
     >
       <div className="relative aspect-[380/250] overflow-hidden rounded-t-[30px]">
         <Image

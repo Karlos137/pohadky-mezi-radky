@@ -38,6 +38,10 @@ const FairyTaleHeader = ({
         return "bg-teal-700"
       case "teal-900":
         return "bg-teal-900"
+      case "pink-700":
+        return "bg-pink-700"
+      case "pink-900":
+        return "bg-pink-900"
       default:
         return "bg-slate-700"
     }
@@ -46,7 +50,7 @@ const FairyTaleHeader = ({
   return (
     <div className="not-prose !mt-8 rounded-lg pb-4 pt-8 lg:pb-5">
       <div className="mx-auto max-w-[808px] px-6">
-        <h1 className="mb-2 text-center text-4xl leading-normal lg:text-6xl lg:leading-normal">
+        <h1 className="mb-2 text-center text-4xl leading-snug lg:text-6xl lg:leading-snug">
           {title}
         </h1>
         <div className="flex items-center justify-center gap-4">
