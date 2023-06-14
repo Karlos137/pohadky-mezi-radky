@@ -1,3 +1,5 @@
+"use client"
+
 // Next.js
 import { useSearchParams } from "next/navigation"
 
@@ -12,11 +14,6 @@ import { TAGS } from "@/utils/constants"
 
 // Dictionary
 import dictionary from "@/utils/dictionary"
-
-export const metadata = {
-  title: "Vyhledávání | Pohádky mezi řádky",
-  description: "Pohádky pro děti.",
-}
 
 const SearchPage = () => {
   const searchParams = useSearchParams()
@@ -80,7 +77,7 @@ const SearchPage = () => {
           })}
         />
       ) : (
-        <p className="mx-auto max-w-[760px] px-6 text-center lg:px-12">
+        <p className="mx-auto max-w-[760px] px-6 text-center text-lg lg:px-12">
           {dictionary.pages.search.noResults}
         </p>
       )}
