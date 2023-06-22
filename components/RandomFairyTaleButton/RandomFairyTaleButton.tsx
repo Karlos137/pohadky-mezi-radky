@@ -29,7 +29,7 @@ const RandomFairyTaleButton = () => {
   return (
     <Link
       href={randomFairyTaleLink}
-      className="mt-8 flex justify-center px-6 lg:px-12"
+      className="mx-auto mt-8 flex w-fit justify-center"
       onClick={() => {
         setRandomFairyTaleLink(
           allFairyTales[Math.floor(Math.random() * allFairyTales.length)].url
