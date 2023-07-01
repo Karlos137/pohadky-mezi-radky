@@ -22,13 +22,16 @@ const HomePage = () => {
 
       <FairyTaleCards
         cards={allFairyTales.map((fairyTale, i) => {
-          const { id, title, url, timeToRead, excerpt, tags, color } = fairyTale
+          const { id, title, url, timeToRead, excerpt, image, tags, color } =
+            fairyTale
           return {
             id,
             title,
             url,
             timeToRead,
             excerpt,
+            image: image.filePath.replace("../../public", ""),
+            imageBlur: image.blurhashDataUrl,
             color,
             tags: tags
               .map(tag => {

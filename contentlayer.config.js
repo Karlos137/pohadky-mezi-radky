@@ -47,6 +47,10 @@ export const FairyTale = defineDocumentType(() => ({
       description: "Short summary of the fairy tale",
       required: true,
     },
+    image: {
+      type: "image",
+      required: true,
+    },
   },
   computedFields: {
     url: {

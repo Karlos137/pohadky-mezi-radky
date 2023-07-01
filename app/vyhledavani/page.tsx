@@ -59,7 +59,7 @@ const SearchPage = () => {
       {filteredFairyTales.length > 0 ? (
         <FairyTaleCards
           cards={filteredFairyTales.map((fairyTale, i) => {
-            const { id, title, url, timeToRead, excerpt, tags, color } =
+            const { id, title, url, timeToRead, excerpt, image, tags, color } =
               fairyTale
             return {
               id,
@@ -67,6 +67,8 @@ const SearchPage = () => {
               url,
               timeToRead,
               excerpt,
+              image: image.filePath.replace("../../public", ""),
+              imageBlur: image.blurhashDataUrl,
               color,
               tags: tags
                 .map(tag => {
