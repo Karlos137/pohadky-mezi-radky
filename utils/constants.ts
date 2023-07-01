@@ -18,6 +18,10 @@ export const TAGS = [
     slug: "pratelstvi",
   },
   {
+    label: "Auta",
+    slug: "auta",
+  },
+  {
     label: "Magie",
     slug: "magie",
   },
