@@ -9,6 +9,7 @@ import { getMDXComponent } from "next-contentlayer/hooks"
 // React components
 import Image from "@/components/Image"
 import FairyTaleHeader from "@/components/FairyTaleHeader"
+import MoreFairyTales from "@/components/MoreFairyTales"
 
 // Constants
 import { TAGS } from "@/utils/constants"
@@ -38,7 +39,7 @@ export async function generateMetadata({
       description,
       images:
         fairyTale?.image.filePath.replace("../../public", "") ||
-        "/images/fairy-tales/hvezdna-cesta/draci.webp",
+        "/images/pohadky-mezi-radky.webp",
 
       siteName: "Pohádky mezi řádky",
       locale: "cs_CZ",
@@ -66,28 +67,33 @@ export default async function FairyTalePage({
 
   const MDXContent = getMDXComponent(fairyTale.body.code)
 
+  const fairyTaleTags = fairyTale.tags
+    .map(tag => {
+      return {
+        label: TAGS.find(t => t.slug === tag.slug)?.label || "",
+        slug: tag.slug,
+      }
+    })
+    .filter(tag => tag.label && tag.slug)
+
   return (
     <>
-      <FairyTaleHeader
-        title={fairyTale.title}
-        color={fairyTale.color}
-        timeToRead={fairyTale.timeToRead}
-        tags={fairyTale.tags
-          .map(tag => {
-            return {
-              label: TAGS.find(t => t.slug === tag.slug)?.label || "",
-              slug: tag.slug,
-            }
-          })
-          .filter(tag => tag.label && tag.slug)}
-      />
-      <div className="mx-auto max-w-[856px] px-6 lg:px-12">
-        <MDXContent
-          components={{
-            Image: Image,
-          }}
+      <article className="prose prose-invert mx-auto mb-16 max-w-[1200px] lg:prose-xl lg:mb-20">
+        <FairyTaleHeader
+          title={fairyTale.title}
+          color={fairyTale.color}
+          timeToRead={fairyTale.timeToRead}
+          tags={fairyTaleTags}
         />
-      </div>
+        <div className="mx-auto max-w-[856px] px-6 lg:px-12">
+          <MDXContent
+            components={{
+              Image: Image,
+            }}
+          />
+        </div>
+      </article>
+      <MoreFairyTales tags={fairyTaleTags} id={fairyTale._id} />
     </>
   )
 }

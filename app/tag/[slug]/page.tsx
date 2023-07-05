@@ -32,7 +32,7 @@ export async function generateMetadata({
     openGraph: {
       title,
       description,
-      images: "/images/fairy-tales/hvezdna-cesta/draci.webp",
+      images: "/images/pohadky-mezi-radky.webp",
       siteName: "Pohádky mezi řádky",
       locale: "cs_CZ",
       type: "website",

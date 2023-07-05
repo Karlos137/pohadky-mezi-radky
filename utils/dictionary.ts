@@ -1,5 +1,8 @@
 export default {
   showMoreButton: "Další pohádky",
+  moreFairyTales: {
+    title: "Ještě nespí? Čtěte další pohádku",
+  },
   footer: {
     copyright: {
       title: "Všechna práva vyhrazena",

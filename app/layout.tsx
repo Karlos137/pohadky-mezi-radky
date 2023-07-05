@@ -17,7 +17,7 @@ export const metadata = {
     title: "Pohádky mezi řádky",
     description:
       "Vstupte do světa kouzelných pohádek pro děti! Na pohadkymeziradky.cz naleznete sbírku pohádek plných dobrodružství, fantazie a přátelství.",
-    images: "/images/fairy-tales/hvezdna-cesta/draci.webp",
+    images: "/images/pohadky-mezi-radky.webp",
     siteName: "Pohádky mezi řádky",
     locale: "cs_CZ",
     type: "website",
