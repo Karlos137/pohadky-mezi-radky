@@ -11,6 +11,7 @@ import Footer from "@/components/Footer/"
 const nunito = Nunito({ subsets: ["latin", "latin-ext"], display: "swap" })
 
 export const metadata = {
+  metadataBase: new URL("https://pohadkymeziradky.cz"),
   title: "Pohádky mezi řádky",
   description: "Pohádky pro děti.",
   openGraph: {

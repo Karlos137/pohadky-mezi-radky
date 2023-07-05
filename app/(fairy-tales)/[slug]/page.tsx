@@ -37,10 +37,16 @@ export async function generateMetadata({
     openGraph: {
       title,
       description,
-      images:
-        fairyTale?.image.filePath.replace("../../public", "") ||
-        "/images/pohadky-mezi-radky.webp",
-
+      images: [
+        {
+          url:
+            fairyTale?.image.filePath.replace("../../public", "") ||
+            "/images/pohadky-mezi-radky.webp",
+        },
+        {
+          url: "/images/pohadky-mezi-radky.webp",
+        },
+      ],
       siteName: "Pohádky mezi řádky",
       locale: "cs_CZ",
       type: "website",
