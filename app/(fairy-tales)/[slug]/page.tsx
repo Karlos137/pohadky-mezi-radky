@@ -22,9 +22,28 @@ export async function generateMetadata({
     fairyTale => fairyTale.slug === params.slug
   )
 
+  const title = fairyTale?.title
+    ? `${fairyTale?.title} | Pohádky mezi řádky`
+    : "Pohádky mezi řádky"
+
+  const description =
+    fairyTale?.excerpt ||
+    "Vstupte do světa kouzelných pohádek pro děti! Na pohadkymeziradky.cz naleznete sbírku pohádek plných dobrodružství, fantazie a přátelství."
+
   return {
-    title: `${fairyTale?.title} | Pohádky mezi řádky` || "Pohádky mezi řádky",
-    description: fairyTale?.excerpt || "Pohádky pro děti.",
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      images:
+        fairyTale?.image.filePath.replace("../../public", "") ||
+        "/images/fairy-tales/hvezdna-cesta/draci.webp",
+
+      siteName: "Pohádky mezi řádky",
+      locale: "cs_CZ",
+      type: "website",
+    },
   }
 }
 

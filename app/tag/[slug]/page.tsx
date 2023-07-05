@@ -18,9 +18,25 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const tag = TAGS.find(tag => tag.slug === params.slug)
 
+  const title = tag?.label
+    ? `${tag?.label} | Pohádky mezi řádky`
+    : "Pohádky mezi řádky"
+
+  const description = tag?.label
+    ? `Pohádky pro děti v kategorii ${tag?.label}.`
+    : "Kategorie pohádek pro děti"
+
   return {
-    title: `${tag?.label} | Pohádky mezi řádky` || "Pohádky mezi řádky",
-    description: `Pohádky pro děti v kategorii ${tag?.label}.`,
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      images: "/images/fairy-tales/hvezdna-cesta/draci.webp",
+      siteName: "Pohádky mezi řádky",
+      locale: "cs_CZ",
+      type: "website",
+    },
   }
 }
 

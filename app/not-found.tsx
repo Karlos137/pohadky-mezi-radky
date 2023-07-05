@@ -9,7 +9,8 @@ import dictionary from "@/utils/dictionary"
 
 export const metadata = {
   title: "Stránka nenalezena | Pohádky mezi řádky",
-  description: "Pohádky pro děti.",
+  description:
+    "Vstupte do světa kouzelných pohádek pro děti! Na pohadkymeziradky.cz naleznete sbírku pohádek plných dobrodružství, fantazie a přátelství.",
 }
 
 const NotFound = () => {

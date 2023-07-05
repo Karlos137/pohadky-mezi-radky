@@ -13,6 +13,15 @@ const nunito = Nunito({ subsets: ["latin", "latin-ext"], display: "swap" })
 export const metadata = {
   title: "Pohádky mezi řádky",
   description: "Pohádky pro děti.",
+  openGraph: {
+    title: "Pohádky mezi řádky",
+    description:
+      "Vstupte do světa kouzelných pohádek pro děti! Na pohadkymeziradky.cz naleznete sbírku pohádek plných dobrodružství, fantazie a přátelství.",
+    images: "/images/fairy-tales/hvezdna-cesta/draci.webp",
+    siteName: "Pohádky mezi řádky",
+    locale: "cs_CZ",
+    type: "website",
+  },
 }
 
 export default function RootLayout({
