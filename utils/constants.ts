@@ -25,4 +25,8 @@ export const TAGS = [
     label: "Magie",
     slug: "magie",
   },
+  {
+    label: "Umění",
+    slug: "umeni",
+  },
 ]

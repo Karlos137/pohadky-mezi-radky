@@ -2,6 +2,7 @@ export default {
   showMoreButton: "Další pohádky",
   moreFairyTales: {
     title: "Ještě nespí? Čtěte další pohádku",
+    allFairyTalesButton: "Všechny pohádky"
   },
   footer: {
     copyright: {

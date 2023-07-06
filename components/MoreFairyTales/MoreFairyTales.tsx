@@ -1,8 +1,12 @@
+// Next.js
+import Link from "next/link"
+
 // Contentlayer
 import { allFairyTales } from "contentlayer/generated"
 
 // React components
 import FairyTaleCards from "../FairyTaleCards"
+import Button from "../Button"
 
 // Constants
 import { TAGS } from "@/utils/constants"
@@ -24,6 +28,10 @@ const MoreFairyTales = ({ tags, id }: MoreFairyTalesProps) => {
     )
     .filter(fairyTale => fairyTale._id !== id)
     .sort(() => Math.random() - 0.5)
+
+  if (relatedFairyTales.length < 3) {
+    return <></>
+  }
 
   return (
     <>
@@ -51,6 +59,11 @@ const MoreFairyTales = ({ tags, id }: MoreFairyTalesProps) => {
           }
         })}
       />
+      <div className="mx-auto mb-16 px-6 lg:mb-24 lg:px-12">
+        <Link href="/" className="mx-auto flex w-fit justify-center">
+          <Button>{dictionary.moreFairyTales.allFairyTalesButton}</Button>
+        </Link>
+      </div>
     </>
   )
 }
