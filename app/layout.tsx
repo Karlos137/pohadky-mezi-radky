@@ -1,6 +1,9 @@
 // Global styles
 import "./globals.css"
 
+// Vercel analytics
+import { Analytics } from "@vercel/analytics/react"
+
 // Next Font
 import { Nunito } from "next/font/google"
 
@@ -36,6 +39,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   )
