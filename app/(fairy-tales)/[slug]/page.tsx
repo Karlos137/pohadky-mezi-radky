@@ -29,7 +29,7 @@ export async function generateMetadata({
 
   const description =
     fairyTale?.excerpt ||
-    "Vstupte do světa kouzelných pohádek pro děti! Na pohadkymeziradky.cz naleznete sbírku pohádek plných dobrodružství, fantazie a přátelství."
+    "Vstupte do světa kouzelných pohádek pro děti! Na pohadkymeziradky.cz naleznete pohádky na dobrou noc plné dobrodružství, fantazie a přátelství."
 
   return {
     title,
