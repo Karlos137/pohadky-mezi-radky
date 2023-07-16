@@ -26,6 +26,10 @@ const FairyTaleHeader = ({
         return "bg-red-700"
       case "red-900":
         return "bg-red-900"
+      case "yellow-700":
+        return "bg-yellow-700"
+      case "yellow-900":
+        return "bg-yellow-900"
       case "fuchsia-700":
         return "bg-fuchsia-700"
       case "fuchsia-900":
