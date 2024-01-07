@@ -84,7 +84,7 @@ export default async function FairyTalePage({
 
   return (
     <>
-      <article className="prose prose-lg prose-invert mx-auto mb-16 max-w-[1200px] lg:prose-xl lg:mb-20">
+      <article className="prose prose-lg prose-invert mx-auto mb-20 max-w-[1200px] lg:prose-xl lg:mb-24">
         <FairyTaleHeader
           title={fairyTale.title}
           color={fairyTale.color}
