@@ -21,25 +21,29 @@ const HomePage = () => {
       </div>
 
       <FairyTaleCards
-        cards={allFairyTales.map((fairyTale, i) => {
-          const { id, title, url, timeToRead, excerpt, image, tags, color } =
-            fairyTale
-          return {
-            id,
-            title,
-            url,
-            timeToRead,
-            excerpt,
-            image: image.filePath.replace("../../public", ""),
-            imageBlur: image.blurhashDataUrl,
-            color,
-            tags: tags
-              .map(tag => {
-                return TAGS.find(t => t.slug === tag.slug)?.label || ""
-              })
-              .filter(tag => tag.length > 0),
-          }
-        })}
+        cards={allFairyTales
+          .sort(function (a, b) {
+            return b.id - a.id
+          })
+          .map((fairyTale, i) => {
+            const { id, title, url, timeToRead, excerpt, image, tags, color } =
+              fairyTale
+            return {
+              id,
+              title,
+              url,
+              timeToRead,
+              excerpt,
+              image: image.filePath.replace("../../public", ""),
+              imageBlur: image.blurhashDataUrl,
+              color,
+              tags: tags
+                .map(tag => {
+                  return TAGS.find(t => t.slug === tag.slug)?.label || ""
+                })
+                .filter(tag => tag.length > 0),
+            }
+          })}
       />
     </>
   )
