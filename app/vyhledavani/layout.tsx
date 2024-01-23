@@ -1,3 +1,6 @@
+// React
+import { Suspense } from 'react'
+
 type SearchLayoutProps = {
   children: React.ReactNode
 }
@@ -8,6 +11,6 @@ export const metadata = {
 }
 
 const SearchLayout = ({ children }: SearchLayoutProps) => {
-  return <>{children}</>
+  return <Suspense>{children}</Suspense>
 }
 export default SearchLayout

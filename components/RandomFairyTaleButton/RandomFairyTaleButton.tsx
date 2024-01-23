@@ -24,7 +24,7 @@ const RandomFairyTaleButton = () => {
     setRandomFairyTaleLink(
       allFairyTales[Math.floor(Math.random() * allFairyTales.length)].url
     )
-  })
+  }, [setRandomFairyTaleLink])
 
   return (
     <Link
